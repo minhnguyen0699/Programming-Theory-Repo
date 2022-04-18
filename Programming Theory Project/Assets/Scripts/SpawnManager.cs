@@ -9,27 +9,27 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosZ = 20;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        InvokeRepeating("SpawnRandomCar", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        int animalIndex = Random.Range(0, animalPrefabs.Length);
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomAnimal();
-        }
+
     }
 
-    void SpawnRandomAnimal()
+    void SpawnRandomCar()
     {
-        int animalIndex = Random.Range(0, animalPrefabs.Length);
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, transform.position.z);
-        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
+        if (!gameManager.isGameOver) { 
+        int carIndex = Random.Range(0, animalPrefabs.Length);
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 1, transform.position.z);
+        Instantiate(animalPrefabs[carIndex], spawnPos, animalPrefabs[carIndex].transform.rotation);
+        }
     }
 }
