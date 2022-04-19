@@ -4,11 +4,12 @@ using UnityEngine;
 
 public abstract class Vehicle : MonoBehaviour
 {
-    [SerializeField] private float speed = 40.0f;
-    
+    [SerializeField] private float speed;
+    private GameManager gameManager;
     void Start()
     {
-
+        gameManager = GetComponent<GameManager>();
+        speed = 40.0f * MainManager.Instance.difficulty;
     }
 
    

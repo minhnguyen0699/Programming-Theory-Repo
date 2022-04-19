@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        InvokeRepeating("SpawnRandomCar", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRandomCar", startDelay, spawnInterval/ MainManager.Instance.difficulty);
     }
 
     // Update is called once per frame

@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI gameOverScoreText;
+    
     public bool isGameOver;
     private int score;
     public Image healthBar;
     private float maxHealth = 100f;
     public GameObject gameOverScreen;
     public GameObject ingameUI;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +37,12 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
         scoreText.SetText("Score: " + score);
-
+        
     }
 
     void UpdateScore()
     {
-        if (!isGameOver) { score += 5; }
+        if (!isGameOver) { score += 5* Mathf.RoundToInt(vehicleX.speed/10); }
     }
     public void GameOver()
     {

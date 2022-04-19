@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8801867086796326207}
   - component: {fileID: 8801867087688091705}
   - component: {fileID: 1758891087880868817}
+  - component: {fileID: 5224297145035316668}
   m_Layer: 0
   m_Name: Heart
   m_TagString: heart
@@ -146,3 +147,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f5e70b692f804d346a44df961b6ad5a8, type: 3}
+--- !u!122 &5224297145035316668
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912637484795935225}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 5

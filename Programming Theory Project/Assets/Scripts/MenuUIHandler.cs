@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIHandler : MonoBehaviour
 {
+    
+    private GameManager gameManager;
+  
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -33,4 +36,9 @@ public class MenuUIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void SetDifficulty(int diff)
+    {
+        MainManager.Instance.difficulty = diff;
+    }
+  
 }
